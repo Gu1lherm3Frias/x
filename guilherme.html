@@ -2,40 +2,59 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Surpresa 😈</title>
+  <title>Conteúdo</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      background: black;
-      height: 100%;
-      overflow: hidden;
+      background: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    #container {
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
       border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #1e90ff;
+      color: white;
+    }
+
+    img {
+      display: none;
+      margin-top: 20px;
+      width: 80vw;
+      max-width: 600px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-<iframe 
-  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&mute=0"
-  allow="autoplay; fullscreen"
-  allowfullscreen>
-</iframe>
+<div id="container">
+  <h1>Conteúdo importante</h1>
+  <button onclick="mostrarGif()">Continuar</button>
+
+  <img 
+    id="gif"
+    src="https://media.giphy.com/media/Vuw9m5wXviFIQ/giphy.gif"
+    alt="Never Gonna Give You Up">
+</div>
 
 <script>
-  // Tenta forçar volume alto (depende do navegador permitir)
-  document.addEventListener('click', () => {
-    const iframe = document.querySelector('iframe');
-    iframe.src += "&mute=0";
-  });
+  function mostrarGif() {
+    const gif = document.getElementById("gif");
+    gif.style.display = "block";
+  }
 </script>
 
 </body>
